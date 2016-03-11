@@ -6,14 +6,21 @@ var $belowUl = $('<ul>');
 var $aboveUl = $('<ul>');
 
 $belowHeading.html('Below ground veggies');
+
 $aboveHeading.html('Above ground veggies');
 
 $body.append($belowHeading);
+$body.append($belowUl);
+
+
 $body.append($aboveHeading);
+$body.append($aboveUl);
 
 $li.each(function () {
-	if ((this).hasClass('below')) {
-		(this).$belowUl.append;
+	if ($(this).hasClass('below')) {
+		$belowUl.append($(this));
 } else {
-	$(this).append.$aboveUl;
-};
+		$aboveUl.append($(this));
+}
+
+});
